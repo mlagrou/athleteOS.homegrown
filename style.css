@@ -5,5 +5,54 @@
     --blackish: #1c1e22;
     --lightorange: #f79176;
     --darkorange: #ff3b69;
+    
 
+}
+
+#container{
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "main"
+        "first"
+        "second"
+        "third"
+        "footer" 
+        ;
+
+    grid-template-rows: 15vh 100vh 100vh 100vh 100vh 20vh;    
+
+    
+}
+
+nav{
+    grid-area: nav;
+    background-color: var(--lightgrey);
+}
+
+main{
+    grid-area: main;
+    background-color: var(--white);
+}
+
+#gettingStarted{
+    grid-area: first;
+    background-color: var(--lightgrey);
+}
+
+
+#meetTeam{
+    grid-area: second;
+    background-color: var(--white);
+}
+
+#rewards{
+    grid-area: third;
+    background-color: var(--lightgrey);
+
+}
+
+footer{
+    grid-area: footer;
+    background-color: var(--lightorange);
 }
