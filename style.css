@@ -21,9 +21,18 @@
         ;
 
     grid-template-rows: 15vh 100vh 100vh 100vh 100vh 20vh;    
+    padding: 2%;
 
     
 }
+
+.mainPhoto{
+    width: 100%;
+    grid-area: mainPhoto;
+
+
+}
+
 
 nav{
     grid-area: nav;
@@ -33,11 +42,31 @@ nav{
 main{
     grid-area: main;
     background-color: var(--white);
+    display: grid;
+    gap: 20px;
+    grid-template-areas: "body mainPhoto";
+    grid-template-columns: 35vw 65vw;
+
 }
+
+body{
+    grid-area:body;
+}
+
+footer{
+    grid-area: footer;
+    background-color: var(--lightorange);
+}
+
 
 #gettingStarted{
     grid-area: first;
     background-color: var(--lightgrey);
+}
+
+h2{
+    font-family: "Inter Tight", Helvetica, sans-serif;
+    font-size: 4.5vw;
 }
 
 
@@ -52,7 +81,3 @@ main{
 
 }
 
-footer{
-    grid-area: footer;
-    background-color: var(--lightorange);
-}
