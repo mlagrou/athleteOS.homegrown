@@ -21,36 +21,23 @@
         ;
 
     grid-template-rows: 15vh 100vh 100vh 100vh 100vh 20vh;    
-    padding: 2%;
 
     
 }
 
-.mainPhoto{
-    width: 100%;
-    grid-area: mainPhoto;
 
-
-}
-
-
-nav{
-    grid-area: nav;
-    background-color: var(--lightgrey);
-}
-
-main{
-    grid-area: main;
-    background-color: var(--white);
-    display: grid;
-    gap: 20px;
-    grid-template-areas: "body mainPhoto";
-    grid-template-columns: 35vw 65vw;
-
-}
 
 body{
     grid-area:body;
+}
+
+button{
+    width: 600px;
+    height: 150px;
+    background-color: #f79176;
+    justify-items: center;
+    color: var(--white);
+    font-family: "Inter Tight", Helvetica, sans-serif;
 }
 
 footer{
@@ -61,23 +48,79 @@ footer{
 
 #gettingStarted{
     grid-area: first;
-    background-color: var(--lightgrey);
+    background-color: var(--white);
 }
+
+
 
 h2{
     font-family: "Inter Tight", Helvetica, sans-serif;
-    font-size: 4.5vw;
+    font-size: 4.0vw;
+    margin-bottom: 0px;
+}
+
+h3{
+    font-family: "Inter Tight", Helvetica, sans-serif;
+    font-size: 1.5vw;
+}
+
+img{
+    vertical-align: middle;
+    border-radius: 200px;
+}
+
+#leftMain{
+    grid-area: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.mainPhoto{
+    grid-area: mainPhoto;
+    /* aspect-ratio: 1 /1; */
+    /* object-fit: cover; */
+    padding: 5%;
+    width: 60vw;
+
+
 }
 
 
+
+main{
+    grid-area: main;
+    background-color: var(--lightgrey);
+    display: grid;
+    gap: 20px;
+    grid-template-areas: "left mainPhoto";
+    grid-template-columns: 30vw 70vw;
+    justify-items: center;    
+
+}
+
 #meetTeam{
     grid-area: second;
+    background-color: var(--lightgrey);
+}
+
+
+nav{
+    grid-area: nav;
     background-color: var(--white);
+}
+
+p{
+    font-family:"Inter Tight", Helvetica, sans-serif;
+    font-size: 1.50vw;
+    color: var(--blackish);
+    line-height: 1.6;
+
 }
 
 #rewards{
     grid-area: third;
-    background-color: var(--lightgrey);
+    background-color: var(--white);
 
 }
 
