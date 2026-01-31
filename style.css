@@ -55,8 +55,8 @@ footer{
 
 h2{
     font-family: "Inter Tight", Helvetica, sans-serif;
-    font-size: 4.0vw;
-    margin-bottom: 0px;
+    font-size: 3.9vw;
+    f
 }
 
 h3{
@@ -81,7 +81,7 @@ img{
     /* aspect-ratio: 1 /1; */
     /* object-fit: cover; */
     padding: 5%;
-    width: 60vw;
+    width: 60                               vw;
 
 
 }
@@ -96,6 +96,8 @@ main{
     grid-template-areas: "left mainPhoto";
     grid-template-columns: 30vw 70vw;
     justify-items: center;    
+    padding: 1%;
+    align-content: space-around;
 
 }
 
