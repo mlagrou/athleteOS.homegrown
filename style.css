@@ -17,27 +17,58 @@
         "first"
         "second"
         "third"
+        "fourth"
         "footer" 
         ;
+    height: 615vh;
 
-    grid-template-rows: 15vh 100vh 100vh 100vh 100vh 20vh;    
+    grid-template-rows: .15fr 1fr 1fr 1fr 1fr 1fr 1fr;    
 
     
 }
-
-
-
-body{
-    grid-area:body;
+img{
+    vertical-align: middle;
+    border-radius: 5%;
 }
 
+
+
 button{
-    width: 600px;
-    height: 150px;
+    padding: 1.25vw 1.85vw;
     background-color: #f79176;
     justify-items: center;
     color: var(--white);
     font-family: "Inter Tight", Helvetica, sans-serif;
+    font-size: 1.5vw;
+    font-weight:600;
+    border-radius: 3vw;
+    border: none;
+    
+}
+
+button.coaches{
+    padding: 1.25vw 1vw;
+    width: fit-content;
+
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    background-color: var(--lightgrey);
+    /* padding: 2vw 2vw; */
+    border-radius: 2vw;
+    gap: 1rem;
+}
+
+.card.white{
+    background-color: var(--white);
+}
+
+
+.centered{
+    text-align: center;
 }
 
 footer{
@@ -46,44 +77,122 @@ footer{
 }
 
 
-#gettingStarted{
+#howitworks{
+    height: 100%;
+    padding: 1%;
     grid-area: first;
     background-color: var(--white);
+    display: grid;
+    grid-template-areas: 
+        "header2"
+        "cards";
+    grid-template-rows: .2fr .8fr;
+    justify-items: center;
+    box-sizing: border-box;
 }
 
+#howitworkscard{
+    height: 100%;
+    grid-area: cards;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 4%; 
+    width: 100%;
+    box-sizing: border-box;
+    padding: 2%;
+}
+
+.howitworksimage{
+    width: 25%;
+    border-radius: 50%;
+    margin: 5%;
+}
 
 
 h2{
     font-family: "Inter Tight", Helvetica, sans-serif;
-    font-size: 3.9vw;
-    f
+    font-size: 3.8vw;
+    margin: 0;
+    color: var(--blackish);
 }
 
 h3{
     font-family: "Inter Tight", Helvetica, sans-serif;
     font-size: 1.5vw;
+    margin: 0;
+    color: var(--blackish);
+    padding: 0%;
 }
 
-img{
-    vertical-align: middle;
-    border-radius: 200px;
+h4{
+    font-family: "Inter Tight", Helvetica, sans-serif;
+    font-size: 3.4vw;
+    font-weight: 300;
+    margin: 0.5rem;
+    color: var(--lightorange);
+    text-align:center;
 }
+
+h5{
+    font-family: "Inter Tight", Helvetica, sans-serif;
+    font-size: 2.4vw;
+    font-weight: 700;
+    margin: 0;
+    color: var(--blackish);
+    padding-top: 5%;
+    padding-left: 5%;
+}
+
+#header3{
+    grid-area: header3;
+}
+
+
+#header2{
+    grid-area: header2;
+}
+
+
+
+#teamcard{
+    grid-area: teamcard;
+    display: flex;
+    justify-content: space-between;
+    gap: 2%; 
+    width: 100%;
+    box-sizing: border-box;
+    padding-top: 1.5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
+    height: 100%;
+    
+    
+}
+
+.teampics{
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+
 
 #leftMain{
     grid-area: left;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    gap: 6%;
+    padding-top: 5%;
+    padding-left: 5%;
+    align-items: center;
 }
 
 .mainPhoto{
     grid-area: mainPhoto;
     /* aspect-ratio: 1 /1; */
     /* object-fit: cover; */
-    padding: 5%;
-    width: 60                               vw;
-
-
+    width: 90%;
+    /* justify-self: center; */
 }
 
 
@@ -92,18 +201,27 @@ main{
     grid-area: main;
     background-color: var(--lightgrey);
     display: grid;
-    gap: 20px;
     grid-template-areas: "left mainPhoto";
-    grid-template-columns: 30vw 70vw;
+    grid-template-columns: 32fr 68fr;
     justify-items: center;    
-    padding: 1%;
-    align-content: space-around;
+    align-content: center;
+    padding: 5% 0; 
+    max-height: 100vh;
 
 }
 
 #meetTeam{
+    height: 100%;
     grid-area: second;
     background-color: var(--lightgrey);
+    padding: 2rem;
+    display: grid;
+    grid-template-areas: 
+        "header3"
+        "teamcard";
+    grid-template-rows: .2fr .8fr;
+    justify-items: center;
+    box-sizing: border-box;;
 }
 
 
@@ -114,14 +232,24 @@ nav{
 
 p{
     font-family:"Inter Tight", Helvetica, sans-serif;
-    font-size: 1.50vw;
+    font-size: 1.60vw;
     color: var(--blackish);
-    line-height: 1.6;
+    line-height: 1.4;
+    margin: 0;
+    padding: 5%;
+    padding-top: 0%;
 
 }
 
+p.main{
+    padding: 0%;
+    padding-top: 0%;
+
+}
+
+
 #rewards{
-    grid-area: third;
+    grid-area: fourth;
     background-color: var(--white);
 
 }
