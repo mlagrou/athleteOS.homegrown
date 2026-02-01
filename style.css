@@ -17,12 +17,11 @@
         "first"
         "second"
         "third"
-        "fourth"
         "footer" 
         ;
-    height: 615vh;
+    height: 530vh;
 
-    grid-template-rows: .15fr 1fr 1fr 1fr 1fr 1fr 1fr;    
+    grid-template-rows: .25fr 1fr 1fr 1fr 1fr .25fr;    
 
     
 }
@@ -36,7 +35,6 @@ img{
 button{
     padding: 1.25vw 1.85vw;
     background-color: #f79176;
-    justify-items: center;
     color: var(--white);
     font-family: "Inter Tight", Helvetica, sans-serif;
     font-size: 1.5vw;
@@ -49,6 +47,7 @@ button{
 button.coaches{
     padding: 1.25vw 1vw;
     width: fit-content;
+    margin-left: 5%;
 
 }
 
@@ -70,6 +69,8 @@ button.coaches{
 .centered{
     text-align: center;
 }
+
+
 
 footer{
     grid-area: footer;
@@ -111,14 +112,14 @@ footer{
 
 h2{
     font-family: "Inter Tight", Helvetica, sans-serif;
-    font-size: 3.8vw;
+    font-size: 3.3rem;
     margin: 0;
     color: var(--blackish);
 }
 
 h3{
     font-family: "Inter Tight", Helvetica, sans-serif;
-    font-size: 1.5vw;
+    font-size: 1.2rem;
     margin: 0;
     color: var(--blackish);
     padding: 0%;
@@ -184,7 +185,7 @@ h5{
     gap: 6%;
     padding-top: 5%;
     padding-left: 5%;
-    align-items: center;
+    align-items: left;
 }
 
 .mainPhoto{
@@ -206,7 +207,8 @@ main{
     justify-items: center;    
     align-content: center;
     padding: 5% 0; 
-    max-height: 100vh;
+    /* max-height: 100vh; */
+    box-sizing: border-box;
 
 }
 
@@ -246,11 +248,73 @@ p.main{
     padding-top: 0%;
 
 }
+.awardphoto{
+    width: 100%;
+}
 
+.reward h2{
+    padding: 5%;
+}
+.reward button{
+    margin-left: 5%;
+}
+
+.reward img{
+    width: 100%;
+}
+
+#photo1{
+    grid-area: awardphoto1;
+}
+#photo2{
+    grid-area: awardphoto2;
+}
+
+#text1{
+    grid-area: text1;
+}
+
+#text2{
+    grid-area:text2;
+}
 
 #rewards{
-    grid-area: fourth;
+    padding: 5%;
+    box-sizing: border-box;
+    grid-area: third;
     background-color: var(--white);
+    display: grid;
+    grid-template-areas: 
+    "text1 awardphoto1"
+    
+    "awardphoto2 text2"
+    ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap:5%;
 
 }
+
+@media only screen and (max-width:500px){
+    #container{
+        grid-template-areas: 
+        "nav"
+        "main"
+        "first"
+        "second"
+        "third"
+        "footer" ;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
+        height: auto;
+    }
+    #howitworkscard{
+        flex-direction: column;
+
+    }
+    #teamcard{
+        flex-direction: column;
+    }
+}
+
 
