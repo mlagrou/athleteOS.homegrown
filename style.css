@@ -3,8 +3,9 @@
     --lightgrey: #f8f9fa;
     --darkgrey: #282b30;
     --blackish: #1c1e22;
-    --lightorange: #f79176;
-    --darkorange: #ff3b69;
+    --lightorange: #FA8072;
+    --darkorange: #FA8072;
+    --accent-cool:	#407076;
     
 
 }
@@ -13,6 +14,7 @@
     display: grid;
     grid-template-areas:
         "nav"
+        "menu"
         "main"
         "first"
         "second"
@@ -21,7 +23,7 @@
         ;
     min-height: 100vh;
     max-width: 100%;
-    grid-template-rows: .25fr auto auto 1fr 1fr .25fr;    
+    grid-template-rows: auto auto auto auto auto .25fr;    
     grid-template-columns: 1fr;
 
     
@@ -36,7 +38,7 @@ img{
 
 button{
     padding: 1.25vw 1.85vw;
-    background-color: #f79176;
+    background-color: var(--darkorange);
     color: var(--white);
     font-family: "Inter Tight", Helvetica, sans-serif;
     font-size: 1.5vw;
@@ -84,7 +86,83 @@ footer{
 
 
 
+#menuWrapper{
+    position: relative;
+}
 
+nav{
+    height: 10vh;
+    background-color: var(--white);
+    border-radius: 25vw;
+    padding-left: 3vw;
+    padding-right: 5vw;
+    margin-top: 1vw;;
+    display: flex;
+    align-items: center;
+    gap: 2vw;
+    justify-content: space-between;
+    position: fixed;
+    top: 0vw;;
+    width: 85%;
+    left: 50%;                      /*i looked this up*/
+    transform: translateX(-50%);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+}
+
+
+#disappearingMenu{
+    display: none;
+    grid-area:menu; 
+    background-color: var(--lightgrey);
+    border-radius: 5px;
+    position: absolute;
+    top: 5vh;
+    right: 0vw;
+    width: 20vw;
+    display: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    color:black;
+    font-family: "Inter Tight", Helvetica, sans-serif;
+    font-size: 2.0vw;
+    color: var(--accent-cool)
+}
+
+#disappearingMenu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    padding-left: 1vw;
+}
+
+#disappearingMenu ul li {
+    gap: 2vw;
+}
+
+#disappearingMenu.active{
+    display:block;
+}
+
+#hamburger{
+    color: var(--darkorange);
+    width: 5vw;
+}
+
+
+.small-logo{
+    width: 10vw;
+    height: 10vw;    
+    align-self: center;
+
+}
+
+h1{
+    font-family: "Inter Tight", Helvetica, sans-serif;
+    font-size: 2.25vw;
+    text-justify: center;
+
+}
 
 h2{
     font-family: "Inter Tight", Helvetica, sans-serif;
@@ -97,7 +175,7 @@ h3{
     font-family: "Inter Tight", Helvetica, sans-serif;
     font-size: 1.5vw;
     margin: 0;
-    color: var(--blackish);
+    color: var(--accent-cool);
 }
 
 h4{
@@ -114,7 +192,7 @@ h5{
     font-size: 2.4vw;
     font-weight: 700;
     margin: 0;
-    color: var(--blackish);
+    color: var(--accent-cool);
 
 }
 
@@ -160,6 +238,7 @@ main{
     align-content: center;
     box-sizing: border-box;
     padding: 4vw;
+    padding-top: 6vw;;
 
 }
 
@@ -176,18 +255,15 @@ main{
 #howitworks{
     grid-area: first;
     background-color: var(--white);
-    display: grid;
-    grid-template-areas: 
-        "header2"
-        "cards";
+    display: flex;
+    flex-direction: column;
     justify-items: center;
     gap: 2vw;
     padding: 4vw; 
-    padding-top: 2vw; 
+    padding-top: 2vw 
 }
 
 #howitworksHeader{
-    grid-area: header2;
     gap: 0.75vw;
     display:flex;
     flex-direction: column;
@@ -198,7 +274,6 @@ main{
 #teamcard h5, #teamcard p{
     padding: 1vw;
 }
-
 
 
 #howitworksBody{
@@ -247,6 +322,12 @@ main{
     flex: 1;
 }
 
+.card.team button{
+    margin-top: auto;
+    padding: 1.25vw 1vw;
+    margin-left: 1vw;;
+}
+
 
 #teamcard{
     grid-area: teamcard;
@@ -262,10 +343,6 @@ main{
 }
 
 
-nav{
-    grid-area: nav;
-    background-color: var(--white);
-}
 
 p{
     font-family:"Inter Tight", Helvetica, sans-serif;
@@ -277,39 +354,35 @@ p{
 
 }
 
-p.main{
-    padding: 0%;
-    padding-top: 0%;
 
-}
 .awardphoto{
     width: 100%;
 }
 
-.reward h2{
-    padding: 5%;
-}
-.reward button{
-    margin-left: 5%;
-}
 
 .reward img{
     width: 100%;
 }
 
-#photo1{
+#awardphoto1{
     grid-area: awardphoto1;
 }
-#photo2{
+#awardphoto2{
     grid-area: awardphoto2;
 }
 
 #text1{
     grid-area: text1;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
 }
 
 #text2{
     grid-area:text2;
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
 }
 
 #rewards{
@@ -330,6 +403,10 @@ p.main{
 }
 
 @media only screen and (max-width:500px){
+    button{
+        padding: 3vw 9vw;
+        font-size: 3vw;
+    }
     #container{
         grid-template-areas: 
         "nav"
@@ -341,25 +418,52 @@ p.main{
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto auto auto;
         height: auto;
+
     }
-    #howitworkscard{
+    #howitworksBody{
         flex-direction: column;
+    }
+    .howitworksimage{
+        height: 20vw;
+        width: 20vw;
+    }
+
+    nav{
+        margin-top: 1vh;
+        height:7vh;
+    }
+    main{
+        display: flex;
+        padding-left: 5vw;
+        padding-right: 5vw;
+        padding-top:10vh;
+        gap: 3vh;
+        flex-direction: column-reverse;
+    }
+    #leftMain{
+        gap:4vw;
+    }
+    .card.howitworks{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding: 5vw;
+        
 
     }
     #teamcard{
         flex-direction: column;
     }
 
-    h2{font-size: 6vw;}
-    h3{font-size: 3.5vw;}
+    h1{font-size: 4vw;}
+    h2{font-size: 8vw;}
+    h3{font-size: 5.5vw;}
     h4{font-size: 5.5vw;}
-    h5{font-size: 4.5vw;}
-    p{font-size: 3.0vw;}
+    h5{font-size: 5cqmin;}
+    p{font-size: 5.0vw;}
 
 
-    main{
-        display:block
-    }
+
 
 
 }

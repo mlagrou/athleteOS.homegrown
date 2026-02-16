@@ -12,7 +12,29 @@
 </head>
 <body>
     <div id ="container">
-        <nav>Future Navigation Section</nav>
+        <nav>
+            <img src = "logo.jpg" class='small-logo'>
+            <h1>athleteOS</h1>
+            
+            <div id = 'menuWrapper'>
+                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="hamburger" x="0" y="0" version="1.1" viewBox="0 0 32 32">
+                    <g fill="currentColor">
+                    <path d="M1 8h30a1 1 0 0 0 0-2H1a1 1 0 0 0 0 2zM31 15H1a1 1 0 0 0 0 2h30a1 1 0 0 0 0-2zM31 24H1a1 1 0 0 0 0 2h30a1 1 0 0 0 0-2z"></path>
+                    </g>
+                </svg>
+                <div id="disappearingMenu">
+                    <ul>
+                        <li>How It Works</li>
+                        <li>Meet Your Team</li>
+                        <li>Our Partners</li>
+                        <li>Pricing</li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
         <main>
             <div id="leftMain">
                 <h2>STOP GUESSING.</h2>
@@ -69,19 +91,19 @@
                     <img class="teampics" src="trainer.jpg">
                     <h5>Coach</h5>
                     <p>									Stay motivated with your own coach offering personalized encouragement, milestone celebrations, and rewards that keep you coming back for more.</p>
-                    <button class="coaches">Build My Routine</button>
+                    <button class="coaches">Get Motivated</button>
                 </div>
                 <div class="card team">
                     <img class="teampics" src="trainer.jpg">
                     <h5>Analyst</h5>
                     <p>Turn your workout data into actionable insights. Get feedback on your performance and know exactly when to progress.</p>
-                    <button class="coaches">Build My Routine</button>
+                    <button class="coaches">Track Insights</button>
                 </div>
                 <div class="card team">
                     <img class="teampics" src="trainer.jpg">
                     <h5>Nutrtionist</h5>
                     <p>Fuel your training with smart meal plans and healthy eating guidance tailored to your goals and lifestyle.</p>
-                    <button class="coaches">Build My Routine</button>
+                    <button class="coaches">Plan Meals</button>
                 </div>
             </div>
         </div>
@@ -91,7 +113,7 @@
                 <p>Earn badges for hitting milestones, maintain training streaks, and achieving personal bests. Watch your achievements stack up, tracking your progress visually and celebrating every win along the way.</p>
                 <button>Get Started</button>
             </div>
-            <img class="awardphoto" id="photo1" src="award1.png">
+            <img class="awardphoto" id="awardphoto1" src="award1.png">
             
             <div class="reward" id="text2">
                 <h2>Real World Rewards</h2>
@@ -99,7 +121,11 @@
                 <button>Our Sponsors</button>
 
             </div>
-            <img class="awardphoto" id="photo2" src="award2.png">
+            <img class="awardphoto" id="awardphoto2" src="award2.png">
+
+
+        </div>
+        <div class="pricing">
 
 
         </div>
@@ -110,4 +136,23 @@
 
     
 </body>
+<script>
+
+const hamburgerMenu = document.querySelector("#hamburger");
+const disappearingMenu = document.querySelector("#disappearingMenu");
+
+hamburgerMenu.addEventListener('click', ()=>{
+    hamburgerMenu.classList.toggle('active');
+    disappearingMenu.classList.toggle('active');
+    if(disappearingMenu.classList.contains('active')){
+
+    }
+})
+
+const pricingSection = document.querySelector('.pricing');
+async function getPrices(){
+    const response = 
+}
+
+</script>
 </html>

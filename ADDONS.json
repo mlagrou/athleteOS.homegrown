@@ -1,0 +1,84 @@
+{
+    "services": [
+      {
+        "id": 1,
+        "serviceName": "Free",
+        "isActive": true,
+        "monthlyPrice": 0,
+        "annualPrice": 0,
+        "features": ["Tracking", "Coaching"]
+      },
+      {
+        "id": 2,
+        "serviceName": "Trainer",
+        "isActive": true,
+        "monthlyPrice": 4.99,
+        "annualPrice": 42.00,
+        "features": ["Tracking", "Coaching", "Trainer"]
+      },
+      {
+        "id": 3,
+        "serviceName": "Nutritionist",
+        "isActive": true,
+        "monthlyPrice": 4.99,
+        "annualPrice": 42.00,
+        "features": ["Tracking", "Coaching", "Nutritionist"]
+      },
+      {
+        "id": 4,
+        "serviceName": "Analyst",
+        "isActive": true,
+        "monthlyPrice": 4.99,
+        "annualPrice": 42.00,
+        "features": ["Tracking", "Coaching", "Analyst"]
+      },
+      {
+        "id": 5,
+        "serviceName": "Trainer + Nutritionist Bundle",
+        "isActive": true,
+        "monthlyPrice": 7.99,
+        "annualPrice": 68.00,
+        "features": ["Tracking", "Coaching", "Trainer", "Nutritionist"]
+      },
+      {
+        "id": 6,
+        "serviceName": "Trainer + Analyst Bundle",
+        "isActive": true,
+        "monthlyPrice": 7.99,
+        "annualPrice": 68.00,
+        "features": ["Tracking", "Coaching", "Trainer", "Analyst"]
+      },
+      {
+        "id": 7,
+        "serviceName": "Nutritionist + Analyst Bundle",
+        "isActive": true,
+        "monthlyPrice": 7.99,
+        "annualPrice": 68.00,
+        "features": ["Tracking", "Coaching", "Nutritionist", "Analyst"]
+      },
+      {
+        "id": 8,
+        "serviceName": "Elite Bundle",
+        "isActive": true,
+        "monthlyPrice": 11.99,
+        "annualPrice": 99.00,
+        "features": ["Tracking", "Coaching", "Trainer", "Nutritionist", "Analyst"]
+      },
+      {
+        "id": 9,
+        "serviceName": "Live Chat",
+        "isActive": true,
+        "monthlyPrice": 5.00,
+        "annualPrice": null,
+        "features": ["Live Chat"]
+      },
+      {
+        "id": 10,
+        "serviceName": "Athlete Pro",
+        "isActive": false,
+        "monthlyPrice": 19.99,
+        "annualPrice": 169.00,
+        "features": ["Tracking", "Coaching", "Trainer", "Nutritionist", "Analyst", "Live Chat", "Personal Coach"]
+      }
+    ]
+  }
