@@ -17,17 +17,13 @@
             <h1>athleteOS</h1>
             
             <div id = 'menuWrapper'>
-                <svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="hamburger" x="0" y="0" version="1.1" viewBox="0 0 32 32">
-                    <g fill="currentColor">
-                    <path d="M1 8h30a1 1 0 0 0 0-2H1a1 1 0 0 0 0 2zM31 15H1a1 1 0 0 0 0 2h30a1 1 0 0 0 0-2zM31 24H1a1 1 0 0 0 0 2h30a1 1 0 0 0 0-2z"></path>
-                    </g>
-                </svg>
+                <img id = 'hamburger' src="hamburger.svg">
                 <div id="disappearingMenu">
                     <ul>
-                        <li>How It Works</li>
-                        <li>Meet Your Team</li>
-                        <li>Our Partners</li>
-                        <li>Pricing</li>
+                        <li><a href = '#howitworks'>How It Works</a></li>
+                        <li><a href = '#meetTeam'>Meet Your Team</a></li>
+                        <li><a href = '#rewards'>Earn Rewards</a></li>
+                        <li><a href = '#pricing'>Pricing</a></li>
 
                     </ul>
                 </div>
@@ -88,19 +84,19 @@
                     <button class="coaches">Build My Routine</button>
                 </div>
                 <div class="card team">
-                    <img class="teampics" src="trainer.jpg">
+                    <img class="teampics" src="coach.jpg">
                     <h5>Coach</h5>
-                    <p>									Stay motivated with your own coach offering personalized encouragement, milestone celebrations, and rewards that keep you coming back for more.</p>
+                    <p>Stay motivated with your own coach offering personalized encouragement, milestone celebrations, and rewards that keep you coming back for more.</p>
                     <button class="coaches">Get Motivated</button>
                 </div>
                 <div class="card team">
-                    <img class="teampics" src="trainer.jpg">
+                    <img class="teampics" src="analyst.jpg">
                     <h5>Analyst</h5>
                     <p>Turn your workout data into actionable insights. Get feedback on your performance and know exactly when to progress.</p>
                     <button class="coaches">Track Insights</button>
                 </div>
                 <div class="card team">
-                    <img class="teampics" src="trainer.jpg">
+                    <img class="teampics" src="nutrtionist.jpg">
                     <h5>Nutrtionist</h5>
                     <p>Fuel your training with smart meal plans and healthy eating guidance tailored to your goals and lifestyle.</p>
                     <button class="coaches">Plan Meals</button>
@@ -108,30 +104,51 @@
             </div>
         </div>
         <div id="rewards">
-            <div class="reward" id="text1">
-                <h2>In App Awards</h2>
-                <p>Earn badges for hitting milestones, maintain training streaks, and achieving personal bests. Watch your achievements stack up, tracking your progress visually and celebrating every win along the way.</p>
-                <button>Get Started</button>
-            </div>
-            <img class="awardphoto" id="awardphoto1" src="award1.png">
-            
-            <div class="reward" id="text2">
-                <h2>Real World Rewards</h2>
-                <p>Stay consistent and unlock exclusive deals on gear, nutrition, and more from our sponsor partners. The more you train, the more you save on equipment and fuel that powers your progress</p>
-                <button>Our Sponsors</button>
+            <div id="rewardinner1">
+                <div class="reward" id="text1">
+                    <h2>In App Awards</h2>
+                    <p>Earn badges for hitting milestones, maintain training streaks, and achieving personal bests. Watch your achievements stack up, tracking your progress visually and celebrating every win along the way.</p>
+                    <button>Get Started</button>
+                </div>
+                <img class="awardphoto" id="awardphoto1" src="award1.png">                
 
             </div>
-            <img class="awardphoto" id="awardphoto2" src="award2.png">
+
+            <div id="rewardinner2">
+                <div class="reward" id="text2">
+                    <h2>Real World Rewards</h2>
+                    <p>Stay consistent and unlock exclusive deals on gear, nutrition, and more from our sponsor partners. The more you train, the more you save on equipment and fuel that powers your progress</p>
+                    <button>Our Sponsors</button>
+
+                </div>
+                <img class="awardphoto" id="awardphoto2" src="award2.png">
+
+            </div>
 
 
         </div>
-        <div class="pricing">
+        <div id="pricing">
+            <div id="pricingHeader">
+                <h2 class="centered">Competitive Pricing</h2>
+                <h4>Only pay for the services you use</h4>
+            </div>
+            <div class="pricingCards">
 
-
+            </div>
         </div>
-        <footer>Future Footer Here</footer>
+        <footer>
+
+            <div id='socialwrapper'>
+
+                <img class="socials" src = "icons8-facebook-50.svg">
+                <img class="socials" src = "icons8-tiktok-50.svg">    
+                <img class="socials" src = "icons8-youtube-50.svg">  
+                <img class="socials" src = "icons8-x-50.svg">  
+                </div>
+                      
+
+        </footer>
     </div>
-
          
 
     
@@ -149,10 +166,31 @@ hamburgerMenu.addEventListener('click', ()=>{
     }
 })
 
-const pricingSection = document.querySelector('.pricing');
+const pricingSection = document.querySelector('.pricingCards');
 async function getPrices(){
-    const response = 
+    try{
+        const response = await fetch('https://mlagrou.github.io/ADDONS.json')
+        const data = await response.json();
+
+        for(let service of data.services){
+            if(service.isActive){
+                const newService = document.createElement('div')
+                newService.classList.add('services')
+                newService.innerHTML=
+                `<h3>${service.serviceName}</h3>
+                <h6>Monthly Price: $${service.monthlyPrice}</h6>
+                <h6>Annual Price: $${service.annualPrice}</h6>
+                `
+                pricingSection.append(newService)
+            }
+        }
+    }
+    catch(error){
+        console.log(error);
+    }
 }
+
+getPrices();
 
 </script>
 </html>

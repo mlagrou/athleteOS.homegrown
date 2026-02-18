@@ -66,14 +66,6 @@
       },
       {
         "id": 9,
-        "serviceName": "Live Chat",
-        "isActive": true,
-        "monthlyPrice": 5.00,
-        "annualPrice": null,
-        "features": ["Live Chat"]
-      },
-      {
-        "id": 10,
         "serviceName": "Athlete Pro",
         "isActive": false,
         "monthlyPrice": 19.99,

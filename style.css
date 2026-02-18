@@ -1,6 +1,6 @@
 :root{
     --white: #ffffff; 
-    --lightgrey: #f8f9fa;
+    --lightgrey: #E2E5E8;
     --darkgrey: #282b30;
     --blackish: #1c1e22;
     --lightorange: #FA8072;
@@ -14,16 +14,16 @@
     display: grid;
     grid-template-areas:
         "nav"
-        "menu"
         "main"
         "first"
         "second"
         "third"
+        "pricing"
         "footer" 
         ;
     min-height: 100vh;
-    max-width: 100%;
-    grid-template-rows: auto auto auto auto auto .25fr;    
+    width: 100%;
+    grid-template-rows: auto auto auto auto auto auto auto .25fr;    
     grid-template-columns: 1fr;
 
     
@@ -31,7 +31,6 @@
 img{
     vertical-align: middle;
     border-radius: 5%;
-    width: 100%
 }
 
 
@@ -60,7 +59,6 @@ button.coaches{
     display: flex;
     flex-direction: column;
     border-radius: 2vw;
-    gap: 1.5rem;
     max-height: fit-content;
 }
 
@@ -82,9 +80,25 @@ body {
 footer{
     grid-area: footer;
     background-color: var(--lightorange);
+    display:flex;
+    gap:5vw;
+    padding: 5vw;
+    justify-content: center;
+
 }
 
+.socials{
+    width: 4vw;
+    background-color: #E2E5E8;
+    padding: 0.5vw;
+    border-radius: 25vw;
+}
 
+#socialwrapper{
+    display:flex;
+    gap: 2.5vw;
+    justify-content: center;
+}
 
 #menuWrapper{
     position: relative;
@@ -145,16 +159,15 @@ nav{
 }
 
 #hamburger{
-    color: var(--darkorange);
-    width: 5vw;
+    width: 3vw;
 }
 
 
 .small-logo{
-    width: 10vw;
-    height: 10vw;    
-    align-self: center;
-
+    width: 5vw;
+    height: 5vw;    
+    align-self: left;
+    margin:-1vw;;
 }
 
 h1{
@@ -196,13 +209,16 @@ h5{
 
 }
 
-
-
-.teampics{
-    width: 100%;
-    display: block;
-    object-fit: cover;
+h6{
+    font-family: "Inter Tight", Helvetica, sans-serif;
+    font-size: 1.5vw;
+    font-weight: 300;
+    padding-left:1vw;
+    margin: 0;
+    color: var(--accent-cool);
 }
+
+
 
 
 
@@ -228,8 +244,6 @@ h5{
 
 main{
     grid-area: main;
-    /* width: 100%; */
-    /* min-width: 0; */
     background-color: var(--lightgrey);
     display: grid;
     grid-template-areas: "left mainPhoto";
@@ -246,6 +260,7 @@ main{
 
 .card.howitworks {
     background-color: var(--lightgrey);
+    gap: 1.5vw;
     flex: 1;
     padding: 1.5vw;
     
@@ -271,9 +286,7 @@ main{
 
 }
 
-#teamcard h5, #teamcard p{
-    padding: 1vw;
-}
+
 
 
 #howitworksBody{
@@ -293,12 +306,11 @@ main{
 }
 
 #meetTeam{
-    height: 100%;
     grid-area: second;
     background-color: var(--lightgrey);
     padding: 4vw;
     padding-top: 2vw;
-    gap: 2vw;
+    gap: 1vw;
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -307,37 +319,49 @@ main{
 
 #meetteamHeader{
     grid-area: header2;
-    gap: 0.75vw;
+    gap: 0.50vw;
     display:flex;
     flex-direction: column;
-    padding: 1vw;
+    /* padding: 1vw; */
 
 }
 
+#teamcard h5, #teamcard p{
+    padding-left: 1vw;
+    padding-right: 1vw;
+}
 
 .card.team{
+    width:21vw;
+
     background-color: var(--white);
-    height: 100%;
     padding-bottom: 1vw;
-    flex: 1;
+    gap: 1vw;
 }
 
 .card.team button{
-    margin-top: auto;
     padding: 1.25vw 1vw;
     margin-left: 1vw;;
 }
+
+.teampics{
+    width: 21vw;
+    display: block;
+    object-fit: cover;
+}
+
+
 
 
 #teamcard{
     grid-area: teamcard;
     display: flex;
-    justify-content: space-between;
+    
     width: 100%;
     box-sizing: border-box;
-    padding-top: 1.5rem;
-    height: 100%;
-    gap: 3vw;
+    padding-top: 1vw;
+    gap: 2vw;
+    justify-content: space-evenly;
     
     
 }
@@ -366,9 +390,12 @@ p{
 
 #awardphoto1{
     grid-area: awardphoto1;
+    width: 45vw;
 }
+
 #awardphoto2{
     grid-area: awardphoto2;
+    width:45vw;
 }
 
 #text1{
@@ -385,6 +412,18 @@ p{
     gap: 3vw;
 }
 
+#rewardinner1, #rewardinner2{
+    display:flex; 
+    align-items: center; 
+    gap: 3vw; 
+    padding:2vw;
+
+}
+
+#rewardinner2{
+    flex-direction: row-reverse;
+}
+
 #rewards{
     box-sizing: border-box;
     padding: 5vw;
@@ -392,20 +431,51 @@ p{
     background-color: var(--white);
     display: grid;
     grid-template-areas: 
-    "text1 awardphoto1"
+    "inner1"
     
-    "awardphoto2 text2"
+    "inner2"
     ;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    gap:5%;
 
 }
 
+a{
+    text-decoration: none;
+    color: var(--accent-cool);
+}
+ #pricing{
+    grid-area: pricing;
+    padding: 4vw;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap:3vw;
+    background-color: #E2E5E8;
+ }
+
+ .pricingCards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 3vw;
+    border-radius: 5vw;;
+}
+
+ .services{
+    padding: 1vw;
+    display:flex;
+    flex-direction: column;
+    background-color: white;
+    width: 25vw;
+    gap: 0.5vw;
+    border-radius: 2vw;
+ }
+
+
 @media only screen and (max-width:500px){
     button{
-        padding: 3vw 9vw;
-        font-size: 3vw;
+        padding: 3vw 8vw !important;
+        font-size: 5vw;
+        border-radius:5vw;
     }
     #container{
         grid-template-areas: 
@@ -414,14 +484,17 @@ p{
         "first"
         "second"
         "third"
-        "footer" ;
+        "pricing"
+        "footer"
+         ;
         grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-rows: auto auto auto auto auto auto auto;
         height: auto;
 
     }
     #howitworksBody{
         flex-direction: column;
+        flex-wrap: wrap;
     }
     .howitworksimage{
         height: 20vw;
@@ -439,6 +512,7 @@ p{
         padding-top:10vh;
         gap: 3vh;
         flex-direction: column-reverse;
+        box-sizing: border-box;
     }
     #leftMain{
         gap:4vw;
@@ -448,18 +522,33 @@ p{
         flex-wrap: wrap;
         align-items: center;
         padding: 5vw;
-        
+    
+    }
 
+    .card.team{
+        gap:5vw;
     }
     #teamcard{
         flex-direction: column;
+        gap:5vw;
+    }
+    #rewards{
+        display:flex;
+        flex-direction: column;
+    }
+    .pricingCards{
+        width: 100%;
+    }
+    .pricing{
+        gap:5vw;;
     }
 
     h1{font-size: 4vw;}
     h2{font-size: 8vw;}
     h3{font-size: 5.5vw;}
     h4{font-size: 5.5vw;}
-    h5{font-size: 5cqmin;}
+    h5{font-size: 5.5vw;}
+    h6{font-size: 4.5vw;}
     p{font-size: 5.0vw;}
 
 
