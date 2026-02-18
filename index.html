@@ -18,6 +18,7 @@
             
             <div id = 'menuWrapper'>
                 <img id = 'hamburger' src="hamburger.svg">
+                <img id = 'close' src="close.svg">
                 <div id="disappearingMenu">
                     <ul>
                         <li><a href = '#howitworks'>How It Works</a></li>
@@ -79,27 +80,37 @@
             <div id="teamcard">
                 <div class="card team">
                     <img class="teampics" src="trainer.jpg">
-                    <h5>Trainer</h5>
-                    <p>Build your routine with expert-designed workouts. Get video demonstrations and form guidance to nail every rep safely and effectively.</p>
-                    <button class="coaches">Build My Routine</button>
+                    <div class= 'teamText'>
+                        <h5>Trainer</h5>
+                        <p>Build your routine with expert-designed workouts. Get video demonstrations and form guidance to nail every rep safely and effectively.</p>
+                        <button class="coaches">Build My Routine</button>
+                    </div>
                 </div>
                 <div class="card team">
                     <img class="teampics" src="coach.jpg">
-                    <h5>Coach</h5>
-                    <p>Stay motivated with your own coach offering personalized encouragement, milestone celebrations, and rewards that keep you coming back for more.</p>
-                    <button class="coaches">Get Motivated</button>
+                    <div class= 'teamText'>
+                        <h5>Coach</h5>
+                        <p>Stay motivated with your own coach offering personalized encouragement, milestone celebrations, and rewards that keep you coming back for more.</p>
+                        <button class="coaches">Get Motivated</button>
+                    </div>
                 </div>
                 <div class="card team">
                     <img class="teampics" src="analyst.jpg">
-                    <h5>Analyst</h5>
-                    <p>Turn your workout data into actionable insights. Get feedback on your performance and know exactly when to progress.</p>
-                    <button class="coaches">Track Insights</button>
+                    <div class= 'teamText'>
+                        <h5>Analyst</h5>
+                        <p>Turn your workout data into actionable insights. Get feedback on your performance and know exactly when to progress.</p>
+                        <button class="coaches">Track Insights</button>
+                    </div>
                 </div>
                 <div class="card team">
                     <img class="teampics" src="nutrtionist.jpg">
-                    <h5>Nutrtionist</h5>
-                    <p>Fuel your training with smart meal plans and healthy eating guidance tailored to your goals and lifestyle.</p>
-                    <button class="coaches">Plan Meals</button>
+
+                    <div class= 'teamText'>
+
+                        <h5>Nutrtionist</h5>
+                        <p>Fuel your training with smart meal plans and healthy eating guidance tailored to your goals and lifestyle.</p>
+                        <button class="coaches">Plan Meals</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -137,8 +148,9 @@
             </div>
         </div>
         <footer>
-
+            <h7>Find and Follow us on Social Media</h7>
             <div id='socialwrapper'>
+                
 
                 <img class="socials" src = "icons8-facebook-50.svg">
                 <img class="socials" src = "icons8-tiktok-50.svg">    
@@ -157,13 +169,22 @@
 
 const hamburgerMenu = document.querySelector("#hamburger");
 const disappearingMenu = document.querySelector("#disappearingMenu");
+const closeSymbol = document.querySelector('#close'); 
+
 
 hamburgerMenu.addEventListener('click', ()=>{
     hamburgerMenu.classList.toggle('active');
     disappearingMenu.classList.toggle('active');
-    if(disappearingMenu.classList.contains('active')){
+        if(disappearingMenu.classList.contains('active')){
+            hamburgerMenu.style.display='none'
+            closeSymbol.style.display='block'
+        }
+})
 
-    }
+closeSymbol.addEventListener('click', ()=>{
+    disappearingMenu.classList.remove('active'); 
+    hamburgerMenu.style.display='block'; 
+    closeSymbol.style.display='none'
 })
 
 const pricingSection = document.querySelector('.pricingCards');

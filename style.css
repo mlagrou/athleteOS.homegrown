@@ -1,6 +1,6 @@
 :root{
     --white: #ffffff; 
-    --lightgrey: #E2E5E8;
+    --lightgrey: #dedede;
     --darkgrey: #282b30;
     --blackish: #1c1e22;
     --lightorange: #FA8072;
@@ -81,7 +81,8 @@ footer{
     grid-area: footer;
     background-color: var(--lightorange);
     display:flex;
-    gap:5vw;
+    flex-direction: column;
+    gap:2vw;
     padding: 5vw;
     justify-content: center;
 
@@ -120,9 +121,10 @@ nav{
     width: 85%;
     left: 50%;                      /*i looked this up*/
     transform: translateX(-50%);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 
 }
+
 
 
 #disappearingMenu{
@@ -159,6 +161,12 @@ nav{
 }
 
 #hamburger{
+    width: 3vw;
+    display:block;
+}
+
+#close{
+    display:none;
     width: 3vw;
 }
 
@@ -216,6 +224,14 @@ h6{
     padding-left:1vw;
     margin: 0;
     color: var(--accent-cool);
+}
+h7{
+    font-family: "Inter Tight", Helvetica, sans-serif;
+    font-size: 2.0vw;
+    font-weight: 500;
+    color: var(--lightgrey);
+    align-self: center;
+
 }
 
 
@@ -449,7 +465,7 @@ a{
     flex-direction: column;
     flex-wrap: wrap;
     gap:3vw;
-    background-color: #E2E5E8;
+    background-color: var(--lightgrey);
  }
 
  .pricingCards {
@@ -490,8 +506,21 @@ a{
         grid-template-columns: 1fr;
         grid-template-rows: auto auto auto auto auto auto auto;
         height: auto;
+        width: 100%;
 
     }
+    #disappearingMenu{
+        width:90vw; 
+        top: 4vh;
+        font-size: 8vw;
+    }
+    #disappearingMenu ul {
+        gap: 5vw;
+    }
+    #hamburger, #close{
+        width: 8vw;
+    }
+
     #howitworksBody{
         flex-direction: column;
         flex-wrap: wrap;
@@ -504,8 +533,15 @@ a{
     nav{
         margin-top: 1vh;
         height:7vh;
+        width: 90vw;
+    }
+    .mainPhoto{
+        width:100%;
+        max-height: 50vw;
+        object-fit: cover;
     }
     main{
+        width:100%;
         display: flex;
         padding-left: 5vw;
         padding-right: 5vw;
@@ -525,22 +561,67 @@ a{
     
     }
 
-    .card.team{
-        gap:5vw;
+
+    .teamText{
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 2vw;
+    }
+
+
+
+
+    .teamText{
+        flex-direction: column;
+        padding: 4vw;
+        padding-top:0vw;
+    }
+    .card.team h5, .card.team p{
+        padding-left: vw;
+    }
+    .teampics{
+        width:100%
     }
     #teamcard{
-        flex-direction: column;
-        gap:5vw;
-    }
-    #rewards{
         display:flex;
         flex-direction: column;
+        gap:8vw;
+        width:100%;
+    }
+    .card.team{
+        gap:8vw;
+        width:100%;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+
+    #rewardinner1, #rewardinner2{
+        flex-direction: column-reverse;
+    }
+    .awardphoto{
+        width:95% !important;
     }
     .pricingCards{
-        width: 100%;
+        justify-content: space-evenly;
+
     }
-    .pricing{
-        gap:5vw;;
+
+    footer{
+        gap:vw;
+        height: 14vh;
+    }
+    .services{
+        width: 40vw;
+    }
+    .small-logo{
+        width:10vw;
+        height: 10vw;
+    }
+    .socials{
+        width: 10vw;
+    }
+    #socialwrapper{
+        gap:10vw;
     }
 
     h1{font-size: 4vw;}
@@ -549,6 +630,7 @@ a{
     h4{font-size: 5.5vw;}
     h5{font-size: 5.5vw;}
     h6{font-size: 4.5vw;}
+    h7{font-size: 4vw;}
     p{font-size: 5.0vw;}
 
 
