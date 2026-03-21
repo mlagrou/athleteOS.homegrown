@@ -23,7 +23,7 @@
         ;
     min-height: 100vh;
     width: 100%;
-    grid-template-rows: auto auto auto auto auto auto auto .25fr;    
+    grid-template-rows: auto;    
     grid-template-columns: 1fr;
 
     
@@ -376,10 +376,14 @@ main{
     width: 100%;
     box-sizing: border-box;
     padding-top: 1vw;
-    gap: 2vw;
     justify-content: space-evenly;
-    
-    
+}
+
+
+.teamText{
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
 }
 
 
@@ -518,7 +522,7 @@ a{
         gap: 5vw;
     }
     #hamburger, #close{
-        width: 8vw;
+        width: vw;
     }
 
     #howitworksBody{
@@ -560,14 +564,6 @@ a{
         padding: 5vw;
     
     }
-
-
-    .teamText{
-        display: flex;
-        flex-direction: column-reverse;
-        gap: 2vw;
-    }
-
 
 
 
@@ -630,7 +626,7 @@ a{
     h4{font-size: 5.5vw;}
     h5{font-size: 5.5vw;}
     h6{font-size: 4.5vw;}
-    h7{font-size: 4vw;}
+    h7{font-size: 3.5vw;}
     p{font-size: 5.0vw;}
 
 
