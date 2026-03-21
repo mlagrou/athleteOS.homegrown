@@ -12,7 +12,7 @@ const server = http.createServer((req, res)=>{
 
     }
     else if (req.url === "/api"){
-        fs.readFile(path.join(__dirname, 'ADDONS.JSON'), (err, content)=>{
+        fs.readFile(path.join(__dirname, 'ADDONS.json'), (err, content)=>{
             if(err) throw err; 
             res.writeHead(200, {'Content-Type': "application/json"})
             res.end(content)
@@ -20,7 +20,6 @@ const server = http.createServer((req, res)=>{
 
     }
     else{
-        if(err) throw err; 
         res.writeHead(404, {'Content-Type': "text/html"})
         res.end('Not Found')
     }
