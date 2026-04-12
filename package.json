@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/mlagrou/athleteOS---homegrown/issues"
   },
-  "homepage": "https://github.com/mlagrou/athleteOS---homegrown#readme"
+  "homepage": "https://github.com/mlagrou/athleteOS---homegrown#readme",
+  "dependencies": {
+    "mongodb": "^7.1.1"
+  }
 }
