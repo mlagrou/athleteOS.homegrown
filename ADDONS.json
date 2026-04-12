@@ -1,6 +1,5 @@
-{
-    "services": [
-      {
+
+      [{
         "id": 1,
         "serviceName": "Free",
         "isActive": true,
@@ -71,6 +70,4 @@
         "monthlyPrice": 19.99,
         "annualPrice": 169.00,
         "features": ["Tracking", "Coaching", "Trainer", "Nutritionist", "Analyst", "Live Chat", "Personal Coach"]
-      }
-    ]
-  }
+      }]
