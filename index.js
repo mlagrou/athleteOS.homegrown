@@ -1,4 +1,7 @@
-//connect to our mongoDB database
+//https://athleteos-homegrown.onrender.com/
+//https://athleteos-homegrown.onrender.com/api
+
+
 require("node:dns/promises").setServers(["1.1.1.1", "8.8.8.8"]);
 const http = require('http');
 const fs = require('fs');
@@ -13,9 +16,8 @@ async function findSomeData(client){
 }
 
 
-// console.log(MongoClient)
 async function main(){
-    const uri = "mongodb+srv://matt:lagrou@lagrou355.qp9qtge.mongodb.net/";
+        const uri = process.env.MONGO_URI;
 
     const client = new MongoClient(uri);
     try{
@@ -24,7 +26,7 @@ async function main(){
 
         const server = http.createServer(async (req, res)=>{
             if (req.url === "/"){
-                fs.readFile(path.join(__dirname, 'index.html'), (err, content)=>{
+                fs.readFile(path.join(__dirname, 'frontend', 'index.html'), (err, content)=>{
                     if(err) throw err;
                     res.writeHead(200, {'Content-Type': 'text/html'})
                     res.end(content)
@@ -39,7 +41,7 @@ async function main(){
 
             
             else if (req.url === '/style.css'){
-                fs.readFile(path.join(__dirname, 'style.css'), (err, content)=>{
+                fs.readFile(path.join(__dirname, 'frontend', 'style.css'), (err, content)=>{
                     if(err) throw err;
                     res.writeHead(200, {'Content-Type': 'text/css'})
                     res.end(content)
